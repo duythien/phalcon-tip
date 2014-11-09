@@ -1,0 +1,13 @@
+
+module mypol 1.0;
+
+require {
+	type httpd_t;
+	type user_home_t;
+	class dir { write add_name };
+	class file { write create };
+}
+
+#============= httpd_t ==============
+allow httpd_t user_home_t:dir { write add_name };
+allow httpd_t user_home_t:file { write create };
