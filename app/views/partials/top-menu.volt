@@ -8,8 +8,8 @@
 				<span class="icon-bar"></span>
 			</button>
 
-			<a href="http://www.laravel-tricks.com" class="navbar-brand">
-				<img width="207" height="50" src="http://www.laravel-tricks.com/img/logo@2x.1.png">
+			<a href="" class="navbar-brand">
+				<img src="http://phalconphp.com//images/logo.png">
 			</a>
 		</div>
 		<div class="collapse navbar-collapse header-collapse">
