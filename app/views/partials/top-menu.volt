@@ -13,7 +13,7 @@
 				<ul class="nav navbar-nav">
 				{%- set menus = [
 	              'Browse': null,
-	              'Create New': 'profiles'
+	              'Create New': 'post/discussion'
 	            ] -%}
 	            {% for value, key in menus %}
 	              {% if value == this.view.getControllerName() or value == null %}
@@ -21,7 +21,7 @@
 
 	              </li>
 	              {% else %}
-	              <li>{{ link_to('', value) }}</li>
+	              <li>{{ link_to(key, value) }}</li>
 	              {% endif %}
 
 	            {% endfor %}

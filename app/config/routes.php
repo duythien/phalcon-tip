@@ -24,6 +24,13 @@ $router->add(
        'action'     => 'index'
     )
 );
+$router->add(
+    '/about',
+    array(
+       'controller' => 'about',
+       'action'     => 'index'
+    )
+);
 
 $router->add(
     '/help/stats',

@@ -46,7 +46,7 @@ use Phalcon\Mvc\View;
 class DiscussionsController extends Controller
 {
 
-    const POSTS_IN_PAGE = 40;
+    const POSTS_IN_PAGE = 9;
 
     /**
      * This initializes the timezone in each request
@@ -57,6 +57,8 @@ class DiscussionsController extends Controller
         if ($timezone) {
             date_default_timezone_set($timezone);
         }
+        
+        $this->view->limitPost    = self::POSTS_IN_PAGE;
     }
 
     /**
@@ -170,6 +172,7 @@ class DiscussionsController extends Controller
         $this->view->offset       = $offset;
         $this->view->paginatorUri = 'discussions/' . $order;
         $this->view->canonical    = '';
+
     }
 
     /**
