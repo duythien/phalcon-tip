@@ -5,10 +5,10 @@
 			<h1 class="page-title">Recent tricks</h1>
 		</div>
 		<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-			<form accept-charset="UTF-8" action="" method="GET">
+			{{ form('search', 'method': 'get', 'autocomplete': 'off') }}
 				<input type="text" value="" placeholder="Search..." class="search-box form-control" name="q">
-			<input type="submit" value="search" style="display:none;">
-			</form>			
+				<input type="submit" value="search" style="display:none;">
+			</form>		
 		</div>
 	</div>
 	<div class="row push-down">
@@ -44,14 +44,7 @@
 				{{- link_to('discussion/' ~ post.id ~ '/' ~ post.slug, post.title|e ,'class':'trick-card-title') -}}
 
 				<div class="trick-card-stats trick-card-by">by<b>							
-						{%- cache "post-users-" ~ post.id -%}
-						{%- for id, user in post.getRecentUsers() -%}
-						 	<a href="{{ url("user/" ~ id ~ "/" ~ user[0]) }}" title="{{ user[0] }}">						 	{{ post.user.login }}
-
-								<img src="https://secure.gravatar.com/avatar/{{ user[1] }}?s=24&amp;r=pg&amp;d=identicon" width="24" height="24" class="img-rounded">
-							</a>
-						{%- endfor -%}
-					{%- endcache -%}
+					{{ link_to('user/' ~ post.user.id ~ '/' ~ post.user.login , post.user.name, '<img src="https://secure.gravatar.com/avatar/{{post.user.gravatar_id}}?s=24&amp;r=pg&amp;d=identicon" width="24" height="24" class="img-rounded') }}
 				</b></div>
 				<div class="trick-card-stats clearfix">
 					<div class="trick-card-timeago">Submitted {{ post.getHumanCreatedAt() }} in 

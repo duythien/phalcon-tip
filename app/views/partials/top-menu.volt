@@ -7,10 +7,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-
-			<a href="" class="navbar-brand">
-				<img src="http://phalconphp.com//images/logo.png">
-			</a>
+			{{ link_to('', 'class' : 'navbar-brand', '<img src="http://phalconphp.com//images/logo.png" class="m-r-sm" alt="scale">') }}
 		</div>
 		<div class="collapse navbar-collapse header-collapse">
 				<ul class="nav navbar-nav">
@@ -29,8 +26,9 @@
 
 	            {% endfor %}
 		            <li class="dropdown">
+
 						<a href="#" class="dropdown-toggle categories-link" data-toggle="dropdown" title="Categories">
-							<span class="glyphicon glyphicon-th-list"></span> <b class="caret"></b>
+							Category <span class="glyphicon glyphicon-th-list"></span> <b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu" id="categories-dropdown">
 						{%- cache "sidebar" -%}
@@ -49,7 +47,26 @@
 				</ul>
 			<div class="navbar-right hidden-xs">
 			{%- if session.get('identity') -%}
-				{{ link_to('post/discussion', '<span class="glyphicon glyphicon-plus"></span> Start a Discussion', 'class': 'btn btn-default btn-primary navbar-btn navbar-right', 'rel': 'nofollow') }}
+				{#{ link_to('post/discussion', '<span class="glyphicon glyphicon-plus"></span> Start a Discussion', 'class': 'btn btn-default btn-primary navbar-btn navbar-right', 'rel': 'nofollow') }#}
+				<ul class="nav">
+					<li class="dropdown">
+					  <a data-toggle="dropdown" class="dropdown-toggle btn btn-primary" href="#">
+					  <img src="https://secure.gravatar.com/avatar/{{ session.get('identity-gravatar') }}?s=64&amp;r=pg&amp;d=identicon" class="img-rounded"
+					width="26px">Profile
+					  <b class="caret"></b>
+					  </a>
+					  <ul class="dropdown-menu">
+					  		<li>{{ link_to('settings', 'Settings') }}</li>
+							<li>{{ link_to('logout', 'Logout')}}</li>
+							<li>{{ link_to('activity', 'Active')}}</li>
+							<li>{{link_to('notifications', 'Notifications')}}
+								{%- if notifications.has() -%}
+								<span class="notification-counter">{{ notifications.getNumber() }}</span>
+								{%- endif -%}
+							</li>
+					  </ul>
+					</li>
+				</ul>
 			{%- else -%}
 				{{ link_to('login/oauth/authorize', '<span class="glyphicon glyphicon-user"></span> Log In with Github', 'class': 'btn btn-default btn-primary navbar-btn navbar-right', 'rel': 'nofollow') }}
 			{%- endif -%}

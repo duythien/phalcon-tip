@@ -165,6 +165,7 @@ class DiscussionsController extends Controller
             $order = 'new';
         }
 
+        $this->assets->addCss('css/index.css');
         $this->view->currentOrder = $order;
         $this->view->offset       = $offset;
         $this->view->paginatorUri = 'discussions/' . $order;
@@ -177,7 +178,7 @@ class DiscussionsController extends Controller
     public function categoryAction($categoryId, $slug, $offset = 0)
     {
         $this->tag->setTitle('Discussions');
-
+        $this->assets->addCss('css/index.css');
         $category = Categories::findFirstById($categoryId);
         if (!$category) {
             $this->flashSession->notice('The category doesn\'t exist');

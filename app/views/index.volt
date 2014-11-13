@@ -23,7 +23,18 @@
 
 		{#- Embed this font here to avoid Cross-Site issues -#}
 		
-
+		<style type="text/css">
+			@font-face {
+				font-family: 'icomoon';
+					src:url('{{ url }}fonts/icomoon.wofficomoon.eot');
+					src:url('{{ url }}fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+					url('{{ url }}fonts/icomoon.woff') format('woff'),
+					url('{{ url }}fonts/icomoon.ttf') format('truetype'),
+					url('{{ url }}fonts/icomoon.svg#icomoon') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
+		</style>
 		{#- CSS resources from jsdelivr cannot be combined due to Bootstrap icons -#}
 		{{- stylesheet_link("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", false) -}}
 		{{- stylesheet_link("//cdn.jsdelivr.net/bootstrap/3.1.1/css/bootstrap.min.css", false) -}}
@@ -35,9 +46,8 @@
 		{%- endif -%}
 		{{- stylesheet_link("css/editor.css?v=" ~ version, true) -}}
 		{{- stylesheet_link("css/diff.css?v=" ~ version, true) -}}
-		{{- stylesheet_link("css/app.css?v=" ~ version, true) -}}
-				{{- stylesheet_link("css/style.css?v=" ~ version, true) -}}
-
+		{{- stylesheet_link("css/style.css?v=" ~ version, true) -}}
+		{{ assets.outputCss() }}
 	</head>
 	<body>
 		{{ content() }}

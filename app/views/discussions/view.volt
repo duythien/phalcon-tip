@@ -26,7 +26,7 @@
 	{%- endif -%}
 {%- endif -%}
 
-{%- if post.canHaveBounty() -%}
+{#%- if post.canHaveBounty() -%}
 {%- set bounty = post.getBounty() -%}
 <div class="bs-callout bs-callout-info">
 	<h4>Bounty available!</h4>
@@ -38,7 +38,7 @@
 		Answer this question and get additional <span class="label label-info">+{{ bounty['value'] }}</span> points of karma/reputation if the original poster accepts your reply as correct answer</p>
 	{%- endif -%}
 </div>
-{%- endif -%}
+{%- endif -%#}
 
 <div class="container">
 
