@@ -18,7 +18,7 @@ $(window).on("load", function(){
 
 	if (document.location.hostname != 'localhost'){
 		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount',    'UA-47328645-']);
+		_gaq.push(['_setAccount',    'UA-47328645-2']);
 		_gaq.push(['_setDomainName', 'phalcontip.com']);
 		_gaq.push(['_trackPageview']);
 		(function() {
