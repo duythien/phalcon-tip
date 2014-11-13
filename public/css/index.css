@@ -52,7 +52,9 @@ h2.title-between {
     margin-bottom: 20px;
     position: relative;
 }
-
+.trick-card-title {
+    min-height:100px;
+}
 .no-push-down {
     margin-bottom: 0 !important;
 }
