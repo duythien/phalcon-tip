@@ -22,6 +22,9 @@
 .navbar-reverse .navbar-nav>li>a {
     font-size: 18px;
 }
+.navbar-brand img{
+    height: 65px;
+}
 .navbar-static-top{
     background-color: #fff;
 }
@@ -33,6 +36,9 @@
 }
 .navbar-default .navbar-nav > li > a {
     color: #428bca;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: bold;
 }
 
 h1 {
