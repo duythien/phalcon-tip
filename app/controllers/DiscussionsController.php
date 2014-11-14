@@ -46,7 +46,7 @@ use Phalcon\Mvc\View;
 class DiscussionsController extends Controller
 {
 
-    const POSTS_IN_PAGE = 9;
+    const POSTS_IN_PAGE = 12;
 
     /**
      * This initializes the timezone in each request
@@ -149,7 +149,7 @@ class DiscussionsController extends Controller
                 break;
 
             default:
-                $this->tag->setTitle('Discussions');
+                $this->tag->setTitle('Tips');
         }
 
         $notDeleteConditions = 'p.deleted = 0';

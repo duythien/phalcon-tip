@@ -57,7 +57,7 @@ class SitemapController extends Controller
         $urlset->setAttribute('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance');
 
         $url = $sitemap->createElement('url');
-        $url->appendChild($sitemap->createElement('loc', 'http://forum.phalconphp.com/'));
+        $url->appendChild($sitemap->createElement('loc', $this->config->site->url));
         $url->appendChild($sitemap->createElement('changefreq', 'daily'));
         $url->appendChild($sitemap->createElement('priority', '1.0'));
         $urlset->appendChild($url);
