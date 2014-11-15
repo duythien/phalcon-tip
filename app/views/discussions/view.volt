@@ -270,6 +270,9 @@
 						<div class="pull-right">
 							{{- link_to('login/oauth/authorize', 'Log In to Comment', 'class': 'btn btn-primary') -}}
 						</div>
+						<div class="pull-left">
+							<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-dnt="true">Tweet</a>
+						</div>
 					</div>
 				{%- endif -%}
 				</div>

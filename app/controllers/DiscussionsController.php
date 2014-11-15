@@ -488,12 +488,12 @@ class DiscussionsController extends Controller
              */
             $post = Posts::findFirstById($id);
             if (!$post) {
-                $this->flashSession->error('The discussion does not exist');
+                $this->flashSession->error('The tip does not exist');
                 return $this->response->redirect();
             }
 
             if ($post->deleted) {
-                $this->flashSession->error('The discussion is deleted');
+                $this->flashSession->error('The tip is deleted');
                 return $this->response->redirect();
             }
 
@@ -576,12 +576,12 @@ class DiscussionsController extends Controller
              */
             $post = Posts::findFirstById($this->request->getPost('id'));
             if (!$post) {
-                $this->flashSession->error('The discussion does not exist');
+                $this->flashSession->error('The tip does not exist');
                 return $this->response->redirect();
             }
 
             if ($post->deleted) {
-                $this->flashSession->error('The discussion is deleted');
+                $this->flashSession->error('The tip is deleted');
                 return $this->response->redirect();
             }
 
@@ -647,7 +647,7 @@ class DiscussionsController extends Controller
         /**
          * Set the post name as title - escaping it first
          */
-        $this->tag->setTitle($this->escaper->escapeHtml($post->title) . ' - Discussion');
+        $this->tag->setTitle($this->escaper->escapeHtml($post->title) . ' - Tip');
 
         $this->view->post = $post;
     }
