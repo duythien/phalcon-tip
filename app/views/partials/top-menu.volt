@@ -7,7 +7,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			{{ link_to("", "class" : "navbar-brand", image(this.config.site.url ~ 'img/logo.jpg')) }}
+			{{ link_to("", "class" : "navbar-brand", image(this.config.site.url ~ '/img/logo.jpg')) }}
 		</div>
 		<div class="collapse navbar-collapse header-collapse">
 				<ul class="nav navbar-nav">
