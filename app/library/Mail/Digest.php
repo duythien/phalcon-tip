@@ -105,7 +105,7 @@ class Digest extends Injectable
 
             try {
 
-                $message = new \Swift_Message('[Phalcon Forum] ' . $subject);
+                $message = new \Swift_Message('[Phalcon Tip] ' . $subject);
                 $message->setTo(array($email => $name));
                 $message->setFrom(array($from => 'Phalcon Tips'));
 

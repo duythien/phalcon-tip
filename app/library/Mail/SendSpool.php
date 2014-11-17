@@ -2,7 +2,7 @@
 
 /*
   +------------------------------------------------------------------------+
-  | Phosphorum                                                             |
+  | Phalcontip                                                             |
   +------------------------------------------------------------------------+
   | Copyright (c) 2013-2014 Phalcon Team and contributors                  |
   +------------------------------------------------------------------------+
@@ -65,9 +65,9 @@ class SendSpool extends Injectable
 
                 try {
 
-                    $message = new \Swift_Message('[Phalcon Forum] ' . $post->title);
+                    $message = new \Swift_Message('[Phalcon Tip] ' . $post->title);
                     $message->setTo(array($user->email => $user->name));
-                    $message->addReplyTo('reply-i' . $post->id . '-' . time() . '@phosphorum.com');
+                    $message->addReplyTo('reply-i' . $post->id . '-' . time() . '@phalcontip.com');
 
                     if ($notification->type == 'P') {
                         $originalContent = $post->content;
@@ -90,10 +90,10 @@ class SendSpool extends Injectable
                         $htmlContent .= '<p style="font-size:small;-webkit-text-size-adjust:none;color:#717171;">';
                         if ($notification->type == 'P') {
                             $htmlContent .= '&mdash;<br>Reply to this email directly or view the complete thread on ' .
-                                PHP_EOL . '<a href="'. $url . '/discussion/' . $post->id . '/' . $post->slug . '">Phosphorum</a>. ';
+                                PHP_EOL . '<a href="'. $url . '/discussion/' . $post->id . '/' . $post->slug . '">Phalcontip</a>. ';
                         } else {
                             $htmlContent .= '&mdash;<br>Reply to this email directly or view the complete thread on ' .
-                                PHP_EOL . '<a href="' . $url . '/discussion/' . $post->id . '/' . $post->slug . '#C' . $reply->id . '">Phosphorum</a>. ';
+                                PHP_EOL . '<a href="' . $url . '/discussion/' . $post->id . '/' . $post->slug . '#C' . $reply->id . '">Phalcontip</a>. ';
                         }
                         $htmlContent .= PHP_EOL . 'Change your e-mail preferences <a href="'. $url . '/settings">here</a></p>';
                         $bodyMessage = new \Swift_MimePart($htmlContent, 'text/html');
