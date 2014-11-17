@@ -56,7 +56,7 @@ class Digest extends Injectable
         $from = $this->config->mail->fromEmail;
         $url  = $this->config->site->url;
 
-        $subject = 'Top Stories from Phosphorum ' . date('d/m/y');
+        $subject = 'Top Stories from Phalcon Tips ' . date('d/m/y');
 
         $lastWeek = new \DateTime();
         $lastWeek->modify('-1 week');
@@ -99,15 +99,15 @@ class Digest extends Injectable
         $textContent = nl2br($content);
 
         $htmlContent = $content . '<p style="font-size:small;-webkit-text-size-adjust:none;color:#717171;">';
-        $htmlContent .= PHP_EOL . 'This email was sent by Phalcon Framework. Change your e-mail preferences <a href="' .$url . '/settings">here</a></p>';
+        $htmlContent .= PHP_EOL . 'This email was sent by Phalcon Tips. Change your e-mail preferences <a href="' .$url . '/settings">here</a></p>';
 
         foreach ($users as $email => $name) {
 
             try {
 
-                $message = new \Swift_Message('[Phalcon Forum] ' . $subject);
+                $message = new \Swift_Message('[Phalcon Tip] ' . $subject);
                 $message->setTo(array($email => $name));
-                $message->setFrom(array($from => 'Phalcon Framework'));
+                $message->setFrom(array($from => 'Phalcon Tips'));
 
                 $bodyMessage = new \Swift_MimePart($htmlContent, 'text/html');
                 $bodyMessage->setCharset('UTF-8');
