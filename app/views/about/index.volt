@@ -19,6 +19,10 @@
 
 					<h3>Want the source?</h3>
 					The source of this website is available on <a title="Get the source of this site" href="https://github.com/zphalcon/phalcon-tip" target="_blank">Github</a>.
+
+					<h3>Want the donations ?</h3>
+					The link here <a title="Get the source of this site" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2JNJ2HASFWU94" target="_blank">Paypal</a>.
+					
 				</div>
 			</div>
 			<div class="row">
