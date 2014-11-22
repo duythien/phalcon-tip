@@ -36,7 +36,7 @@
 			}
 		</style>
 		{#- CSS resources from jsdelivr cannot be combined due to Bootstrap icons -#}
-		{{- stylesheet_link("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", false) -}}
+		{{- stylesheet_link("//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", false) -}}
 		{{- stylesheet_link("//cdn.jsdelivr.net/bootstrap/3.1.1/css/bootstrap.min.css", false) -}}
 		{{- stylesheet_link("//cdn.jsdelivr.net/prettify/0.1/prettify.css", false) -}}
 		{%- if theme == 'L' -%}
@@ -52,6 +52,22 @@
 	<body>
 		{{ content() }}
 		<script type="text/javascript" src="//cdn.jsdelivr.net/g/jquery@2.1,bootstrap@3.1,prettify@0.1(prettify.js+lang-css.js+lang-sql.js)"></script>
+		<!-- Piwik -->
+		<script type="text/javascript">
+		  var _paq = _paq || [];
+		  _paq.push(['trackPageView']);
+		  _paq.push(['enableLinkTracking']);
+		  (function() {
+		    var u="//stackphysics.org/";
+		    _paq.push(['setTrackerUrl', u+'piwik.php']);
+		    _paq.push(['setSiteId', 1]);
+		    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+		  })();
+		</script>
+		<noscript><p><img src="//stackphysics.org/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+		<!-- End Piwik Code -->
+
 		{{ javascript_include("js/editor.js?v=" ~ version) }}
 		{{ javascript_include("js/forum.js?v=" ~ version) }}
 		{{ javascript_include("js/gs.js?v=" ~ version) }}
