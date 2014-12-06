@@ -875,6 +875,12 @@ ALTER TABLE `users`
  ADD PRIMARY KEY (`id`), ADD KEY `access_token` (`access_token`), ADD KEY `login` (`login`), ADD KEY `email` (`email`), ADD KEY `karma` (`karma`), ADD KEY `login_2` (`login`), ADD KEY `notifications` (`notifications`);
 
 --
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+
+--
 -- Indexes for table `users_badges`
 --
 ALTER TABLE `users_badges`
