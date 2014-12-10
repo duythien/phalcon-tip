@@ -112,6 +112,9 @@ class SessionController extends Controller
 
             //$user = ForumUsers::findFirst();
 
+            // Update session id
+            session_regenerate_id(true);
+
             /**
              * Update the user information
              */
