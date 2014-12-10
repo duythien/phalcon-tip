@@ -19,6 +19,7 @@ use Phalcon\Http\Response;
 use Phalcon\Mvc\Application;
 use Phalcon\DI\FactoryDefault;
 use Phalcon\Logger\Adapter\File as Logger;
+use Phosphorum\Monolog\Slack;
 
 error_reporting(E_ALL);
 
@@ -68,10 +69,7 @@ try {
      * Log the exception
      */
     $logger = new Logger(APP_PATH . '/app/logs/error.log');
+    (new Slack)->run($e->getMessage());
     $logger->error($e->getMessage());
     $logger->error($e->getTraceAsString());
-
-    echo $e->getMessage(), '<br>';
-    echo nl2br(htmlentities($e->getTraceAsString()));
-
 }

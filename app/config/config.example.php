@@ -86,5 +86,10 @@ return new \Phalcon\Config(array(
     'mail'     => array(
         'fromName'     => 'Phalcon',
         'fromEmail'    => 'phosphorum@phalconphp.com',
+    ),
+    'slack' => array(
+        'token' => 'you token',
+        'room'  => 'devsite',
+        'username'  => 'phalcon'
     )
 ));
