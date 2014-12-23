@@ -990,16 +990,14 @@ class DiscussionsController extends Controller
 
         $posts = $indexer->search(array('title' => $q, 'content' => $q), 50, true);
         if (!count($posts)) {
-            $posts = $indexer->search(array('title' => $q), 50, true);
-            if (!count($posts)) {
-                $this->flashSession->notice('There are no search results');
-                return $this->response->redirect();
-            }
+            $this->flashSession->notice('There are no search results');
+            return $this->response->redirect();
         }
 
         $paginator = new \stdClass;
         $paginator->count = 0;
 
+        $this->assets->addCss('css/index.css');
         $this->view->posts        = $posts;
         $this->view->totalPosts   = $paginator;
         $this->view->currentOrder = null;

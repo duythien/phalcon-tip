@@ -43,16 +43,17 @@ class Indexer
             $searchParams['index'] = 'phosphorum';
             $searchParams['type']  = 'post';
 
-            $searchParams['body']['fields'] = array('id', 'karma');
+            // I'm not sure, but this code makes search result empty. So I commented out.
+            //$searchParams['body']['fields'] = array('id', 'karma');
 
             if (count($fields) == 1) {
                 $searchParams['body']['query']['match'] = $fields;
             } else {
                 $terms = array();
                 foreach ($fields as $field => $value) {
-                    $terms[] = array('term' => array($field => $value));
+                    $terms[] = array('match' => array($field => array('query' => $value, 'operator' => 'and')));
                 }
-                $searchParams['body']['query']['bool']['must'] = $terms;
+                $searchParams['body']['query']['bool']['should'] = $terms;
             }
 
             $searchParams['body']['from'] = 0;
@@ -64,21 +65,19 @@ class Indexer
             if (is_array($queryResponse['hits'])) {
                 $d = 0.5;
                 foreach ($queryResponse['hits']['hits'] as $hit) {
-                    $post = Posts::findFirstById($hit['fields']['id'][0]);
+                    $post = Posts::findFirstById($hit['_source']['id']);
                     if ($post) {
-                        if ($hit['fields']['karma'][0] > 0 && ($post->number_replies > 0 || $post->accepted_answer == 'Y')) {
-                            $score = $hit['_score'] * 250 + $hit['fields']['karma'][0] + $d;
-                            if (!$returnPosts) {
-                                $results[$score] = array(
-                                    'slug'    => 'discussion/' . $post->id . '/' . $post->slug,
-                                    'title'   => $post->title,
-                                    'created' => $post->getHumanCreatedAt()
-                                );
-                            } else {
-                                $results[$score] = $post;
-                            }
-                            $d += 0.05;
+                        $score = $hit['_score'] * 250 + $hit['_source']['karma'] + $d;
+                        if (!$returnPosts) {
+                            $results[$score] = array(
+                                'slug'    => 'discussion/' . $post->id . '/' . $post->slug,
+                                'title'   => $post->title,
+                                'created' => $post->getHumanCreatedAt()
+                            );
+                        } else {
+                            $results[$score] = $post;
                         }
+                        $d += 0.05;
                     }
                 }
             }
