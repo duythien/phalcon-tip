@@ -236,7 +236,7 @@ class DiscussionsController extends Controller
             return $this->response->redirect();
         }
 
-        $this->tag->setTitle('Start a Discussion');
+        $this->tag->setTitle('Post a Tip');
 
         if ($this->request->isPost()) {
             if (!$this->checkTokenPost()) {

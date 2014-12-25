@@ -2,7 +2,7 @@
 
 <div class="container start-discussion">
 
-    <h1>Start a Discussion</h1>
+    <h1>Post a Tip</h1>
 
     <div class="row">
         <div class="col-md-1 remove-image hidden-xs" align="right">
@@ -70,10 +70,10 @@
                         </div>
 
                         <div class="pull-left">
-                            {{ link_to('', 'Back to discussions') }}
+                            {{ link_to('', 'Back to Tips') }}
                         </div>
                         <div class="pull-right">
-                            <button type="submit" class="btn btn-sm btn-success">Submit Discussion</button>
+                            <button type="submit" class="btn btn-sm btn-success">Submit Tip</button>
                         </div>
 
                     </form>

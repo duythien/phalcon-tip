@@ -39,7 +39,7 @@
 										{{ select_static('notifications', [
 											'N': 'Never receive an e-mail notification',
 											'Y': 'Receive e-mail notifications from all new threads and comments',
-											'P': 'When someone replies to a discussion that I started or replied to'
+											'P': 'When someone replies to a tip that I started or replied to'
 										], 'class': 'form-control') }}
 									</div>
 									<div class="form-group">

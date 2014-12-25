@@ -7,7 +7,7 @@
         <li>{{ link_to('category/' ~ post.category.id ~ '/' ~ post.category.slug, post.category.name) }}</a></li>
     </ol>
 
-    <h1>Edit Discussion: {{ post.title|e }}</h1>
+    <h1>Edit Tip: {{ post.title|e }}</h1>
 
     <div class="row">
         <div class="col-md-1 remove-image" align="right">
