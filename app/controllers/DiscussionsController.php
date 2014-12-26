@@ -180,13 +180,13 @@ class DiscussionsController extends Controller
      */
     public function categoryAction($categoryId, $slug, $offset = 0)
     {
-        $this->tag->setTitle('Discussions');
         $this->assets->addCss('css/index.css');
         $category = Categories::findFirstById($categoryId);
         if (!$category) {
             $this->flashSession->notice('The category doesn\'t exist');
             return $this->response->redirect();
         }
+        $this->tag->setTitle($category->name);
 
         /** @var \Phalcon\Mvc\Model\Query\BuilderInterface $itemBuilder */
         /** @var \Phalcon\Mvc\Model\Query\BuilderInterface $totalBuilder */
