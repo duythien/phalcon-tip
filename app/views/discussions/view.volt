@@ -260,7 +260,7 @@
 							</p>
 							<p>
 								<div class="pull-left">
-									{{- link_to('', 'Back to discussions') -}}
+									{{- link_to('', 'Back to Tips') -}}
 								</div>
 								<div class="pull-right">
 									<button type="submit" class="btn btn-success">Add Comment</button>

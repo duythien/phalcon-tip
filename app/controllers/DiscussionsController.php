@@ -117,12 +117,12 @@ class DiscussionsController extends Controller
         switch ($order) {
 
             case 'hot':
-                $this->tag->setTitle('Hot Discussions');
+                $this->tag->setTitle('Hot Tips');
                 $itemBuilder->orderBy('p.modified_at DESC');
                 break;
 
             case 'my':
-                $this->tag->setTitle('My Discussions');
+                $this->tag->setTitle('My Tips');
                 if ($userId) {
                     $params       = array($userId);
                     $myConditions = 'p.users_id = ?0';
@@ -132,14 +132,14 @@ class DiscussionsController extends Controller
                 break;
 
             case 'unanswered':
-                $this->tag->setTitle('Unanswered Discussions');
-                $unansweredConditions = 'p.number_replies = 0 AND p.accepted_answer <> "Y"';
+                $this->tag->setTitle('Uncommented Tips');
+                $unansweredConditions = 'p.number_replies = 0';
                 $itemBuilder->where($unansweredConditions);
                 $totalBuilder->where($unansweredConditions);
                 break;
 
             case 'answers':
-                $this->tag->setTitle('My Answers');
+                $this->tag->setTitle('My Comments');
                 if ($userId) {
                     $params            = array($userId);
                     $answersConditions = 'r.users_id = ?0';
@@ -236,7 +236,7 @@ class DiscussionsController extends Controller
             return $this->response->redirect();
         }
 
-        $this->tag->setTitle('Start a Discussion');
+        $this->tag->setTitle('Post a Tip');
 
         if ($this->request->isPost()) {
             if (!$this->checkTokenPost()) {
