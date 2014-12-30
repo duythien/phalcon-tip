@@ -16,11 +16,11 @@
                 <div class="col-md-9">
 
                     <div class="bs-callout bs-callout-info">
-                        <h4>Creating a new Post</h4>
+                        <h4>Creating a new Tip</h4>
 
                         <p> {{ config.site.project }} is an open source project and a volunteer effort.
-                            Help us make this a great place for discussion and collaboration. Please spend some time browsing the
-                            topics here
+                            Help us make this a great place for sharing and collaboration. Please spend some time browsing the
+                            tips here
                             before replying or starting your own, and you'll have a better chance of meeting others who share
                             your interests or have had similar problems. If you want to report any bug related to {{ config.site.project }} or
                             suggest a new feature, please post it on <a href="{{ config.site.repo }}">Github</a> issues.</p>
