@@ -346,7 +346,7 @@ class DiscussionsController extends Controller
             $this->tag->displayTo('categoryId', $post->categories_id);
         }
 
-        $this->tag->setTitle('Edit Discussion: ' . $this->escaper->escapeHtml($post->title));
+        $this->tag->setTitle('Edit Tip: ' . $this->escaper->escapeHtml($post->title));
 
         $parametersCategory = array(
             'order' => 'name'
@@ -422,7 +422,7 @@ class DiscussionsController extends Controller
                 $user->save();
             }
 
-            $this->flashSession->success('Discussion was successfully deleted');
+            $this->flashSession->success('Tip was successfully deleted');
             return $this->response->redirect();
         }
     }
