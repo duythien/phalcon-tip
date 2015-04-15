@@ -25,7 +25,7 @@ use Codeception\Module\TestHelper;
  * @method void offsetUnset($offset)
 */
 
-class TestGuy extends \Codeception\AbstractGuy
+class TestGuy extends \Codeception\Actor
 {
     
     /**
