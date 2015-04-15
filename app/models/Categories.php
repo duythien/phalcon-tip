@@ -15,7 +15,7 @@
  +------------------------------------------------------------------------+
 */
 
-namespace Phosphorum\models;
+namespace Phosphorum\Models;
 
 /**
  * Class Categories

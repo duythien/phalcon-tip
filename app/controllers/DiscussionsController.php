@@ -15,7 +15,7 @@
   +------------------------------------------------------------------------+
 */
 
-namespace Phosphorum\controllers;
+namespace Phosphorum\Controllers;
 
 use Phosphorum\Models\Posts;
 use Phosphorum\Models\PostsViews;

@@ -20,6 +20,7 @@ namespace Phosphorum\Badges\Badge;
 use Phosphorum\Models\Users;
 use Phosphorum\Models\UsersBadges;
 use Phosphorum\Models\Categories;
+
 use Phosphorum\Models\PostsVotes;
 use Phosphorum\Models\PostsRepliesVotes;
 use Phosphorum\Badges\BadgeBase;

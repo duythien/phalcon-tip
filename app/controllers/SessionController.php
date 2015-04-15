@@ -15,7 +15,7 @@
  +------------------------------------------------------------------------+
 */
 
-namespace Phosphorum\controllers;
+namespace Phosphorum\Controllers;
 
 use Phosphorum\Github\OAuth;
 use Phosphorum\Github\Users as GithubUsers;

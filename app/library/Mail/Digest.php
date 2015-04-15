@@ -73,6 +73,7 @@ class Digest extends Injectable
         $content = '<html><head></head><body><p><h1 style="font-size:22px;color:#333;letter-spacing:-0.5px;line-height:1.25;font-weight:normal;padding:16px 0;border-bottom:1px solid #e2e2e2">Top Stories from Phosphorum</h1></p>';
 
         foreach (Posts::find($parameters) as $post) {
+
             $user = $post->user;
             if ($user == false) {
                 continue;
@@ -94,6 +95,7 @@ class Digest extends Injectable
             $content .= '<p><a style="color:#155fad" href="' . $url . '/discussion/' . $post->id . '/' . $post->slug . '">Read more</a></p>';
 
             $content .= '<hr style="border: 1px solid #dadada">';
+
         }
 
         $textContent = nl2br($content);
@@ -102,7 +104,9 @@ class Digest extends Injectable
         $htmlContent .= PHP_EOL . 'This email was sent by Phalcon Tips. Change your e-mail preferences <a href="' .$url . '/settings">here</a></p>';
 
         foreach ($users as $email => $name) {
+
             try {
+
                 $message = new \Swift_Message('[Phalcon Tip] ' . $subject);
                 $message->setTo(array($email => $name));
                 $message->setFrom(array($from => 'Phalcon Tips'));
@@ -116,6 +120,7 @@ class Digest extends Injectable
                 $message->attach($bodyMessage);
 
                 if (!$this->transport) {
+
                     $this->transport = \Swift_SmtpTransport::newInstance(
                         $this->config->smtp->host,
                         $this->config->smtp->port,
@@ -130,9 +135,11 @@ class Digest extends Injectable
                 }
 
                 $this->mailer->send($message);
+
             } catch (\Exception $e) {
                 echo $e->getMessage(), PHP_EOL;
             }
         }
+
     }
 }
