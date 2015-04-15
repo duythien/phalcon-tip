@@ -15,7 +15,7 @@
  +------------------------------------------------------------------------+
 */
 
-namespace Phosphorum\Controllers;
+namespace Phosphorum\controllers;
 
 use Phalcon\Http\Response;
 use Phalcon\Mvc\Controller;

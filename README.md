@@ -1,9 +1,9 @@
-Phosphorum 2
+PhalconTip
 ============
 
-[![Build Status](https://secure.travis-ci.org/phalcon/forum.svg?branch=master)](http://travis-ci.org/phalcon/forum)
+[![Build Status](https://travis-ci.org/zphalcon/phalcon-tip.svg?branch=master)](https://travis-ci.org/zphalcon/phalcon-tip.svg)
 
-This is the official Phalcon Forum you can adapt it to your own needs or improve it if you want.
+This is the official Phalcon Tip it clone from Phalcon Forum, you can adapt it to your own needs or improve it if you want.
 
 Please write us if you have any feedback.
 

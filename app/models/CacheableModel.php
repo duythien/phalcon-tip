@@ -15,7 +15,7 @@
  +------------------------------------------------------------------------+
 */
 
-namespace Phosphorum\Models;
+namespace Phosphorum\models;
 
 use Phalcon\Mvc\Model;
 use Phalcon\DI;

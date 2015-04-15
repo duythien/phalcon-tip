@@ -88,7 +88,6 @@ class Users
      */
     public function getEmail()
     {
-
         if (isset($this->response['email'])) {
             if ($this->response['email'] && strpos($this->response['email'], '@') !== false) {
                 return $this->response['email'];

@@ -15,7 +15,7 @@
  +------------------------------------------------------------------------+
 */
 
-namespace Phosphorum\Controllers;
+namespace Phosphorum\controllers;
 
 use Phalcon\Mvc\Controller;
 use Phosphorum\Models\Posts;
