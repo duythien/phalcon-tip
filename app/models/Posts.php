@@ -15,7 +15,7 @@
  +------------------------------------------------------------------------+
 */
 
-namespace Phosphorum\Models;
+namespace Phosphorum\models;
 
 use Phalcon\Mvc\Model;
 
@@ -124,7 +124,6 @@ class Posts extends Model
                 'alias' => 'subscribers'
             )
         );
-
     }
 
     public function beforeValidationOnCreate()
@@ -206,7 +205,6 @@ class Posts extends Model
 
     public function afterSave()
     {
-
         $this->clearCache();
 
         $history           = new PostsHistory();
@@ -239,7 +237,6 @@ class Posts extends Model
      */
     public function getRecentUsers()
     {
-
         $users  = array($this->user->id => array($this->user->login, $this->user->gravatar_id));
         foreach ($this->getReplies(['order' => 'created_at DESC', 'limit' => 3]) as $reply) {
             if (!isset($users[$reply->user->id])) {

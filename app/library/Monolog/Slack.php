@@ -25,7 +25,7 @@ use Phalcon\Mvc\User\Component;
 
 /**
  * Class to configure and return a Monolog to Slack
- * 
+ *
  * @return Monolog\loger
  */
 class Slack extends Component
@@ -34,12 +34,11 @@ class Slack extends Component
  
     /**
      * Method to return the Monolog to slack
-     * 
+     *
      * @return Monolog\Logger
      */
-    public  function run($message)
+    public function run($message)
     {
-
         $room     = $this->config->slack->room;
         $token    = $this->config->slack->token;
         $username = $this->config->slack->username;
@@ -52,4 +51,3 @@ class Slack extends Component
         $log->error($message);
     }
 }
-

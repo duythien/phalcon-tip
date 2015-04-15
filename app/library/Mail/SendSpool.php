@@ -60,11 +60,8 @@ class SendSpool extends Injectable
         $url  = $this->config->site->url;
 
         if ($post && $user && $reply) {
-
             if ($user->email && $user->notifications != 'N' && strpos($user->email, '@users.noreply.github.com') === false) {
-
                 try {
-
                     $message = new \Swift_Message('[Phalcon Tip] ' . $post->title);
                     $message->setTo(array($user->email => $user->name));
                     $message->addReplyTo('reply-i' . $post->id . '-' . time() . '@phalcontip.com');
@@ -107,7 +104,6 @@ class SendSpool extends Injectable
                         $message->attach($bodyMessage);
 
                         if (!$this->transport) {
-
                             $this->transport = \Swift_SmtpTransport::newInstance(
                                 $this->config->smtp->host,
                                 $this->config->smtp->port,
@@ -135,7 +131,6 @@ class SendSpool extends Injectable
                 echo $message->getMessage(), PHP_EOL;
             }
         }
-
     }
 
     /**
@@ -153,11 +148,8 @@ class SendSpool extends Injectable
      */
     public function consumeQueue()
     {
-
         while (true) {
-
             while ($this->queue->peekReady() !== false) {
-
                 $job = $this->queue->reserve();
 
                 $message = $job->getBody();

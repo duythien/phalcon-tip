@@ -14,7 +14,7 @@
  | to license@phalconphp.com so we can send you a copy immediately.       |
  +------------------------------------------------------------------------+
 */
-namespace Phosphorum\Models;
+namespace Phosphorum\models;
 
 use Phalcon\Mvc\Model;
 
