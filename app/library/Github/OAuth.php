@@ -105,6 +105,7 @@ class OAuth extends Injectable
     public function send($url, $parameters, $method = 'post')
     {
         try {
+
             $client = new HttpClient();
 
             $headers = array(
@@ -123,6 +124,7 @@ class OAuth extends Injectable
             }
 
             return json_decode((string)$request->send()->getBody(), true);
+
         } catch (\Exception $e) {
             //file_put_contents('error.txt', $e->getMessage());
             return false;

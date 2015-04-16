@@ -1,5 +1,11 @@
 language: php
 
+before_script:
+  - chmod a+x ./tests/install-php-extension.sh
+  - ./tests/install-php-extension.sh  
+  - composer self-update
+  - composer update --dev -o --no-interaction
+
 php:
   - 5.4
   - 5.5
@@ -10,7 +16,7 @@ install:
 
 script:
  - vendor/bin/phpcs --standard=PSR2 --report=emacs --extensions=php --warning-severity=0 --ignore=app/cache app/
- - php codecept.phar run --debug
+ - vendor/bin/codecept run --debug
 notifications:
   email:
     - fcduythien@gmail.com

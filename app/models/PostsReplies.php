@@ -15,7 +15,7 @@
  +------------------------------------------------------------------------+
 */
 
-namespace Phosphorum\models;
+namespace Phosphorum\Models;
 
 use Phalcon\Mvc\Model;
 use Phalcon\Mvc\Model\Behavior\Timestampable;
@@ -120,6 +120,7 @@ class PostsReplies extends Model
     public function afterCreate()
     {
         if ($this->id > 0) {
+
             $activity           = new Activities();
             $activity->users_id = $this->users_id;
             $activity->posts_id = $this->posts_id;
@@ -133,6 +134,7 @@ class PostsReplies extends Model
              */
             foreach (Users::find(array('notifications = "Y"', 'columns' => 'id')) as $user) {
                 if ($this->users_id != $user->id) {
+
                     $notification                   = new Notifications();
                     $notification->users_id         = $user->id;
                     $notification->posts_id         = $this->posts_id;
@@ -157,6 +159,7 @@ class PostsReplies extends Model
              */
             foreach (PostsSubscribers::findByPostsId($this->posts_id) as $subscriber) {
                 if (!isset($toNotify[$subscriber->users_id])) {
+
                     $notification                   = new Notifications();
                     $notification->users_id         = $subscriber->users_id;
                     $notification->posts_id         = $this->posts_id;
@@ -180,6 +183,7 @@ class PostsReplies extends Model
              * Register the user in the post's notifications
              */
             if (!isset($toNotify[$this->users_id])) {
+
                 $parameters       = array(
                     'users_id = ?0 AND posts_id = ?1',
                     'bind' => array($this->users_id, $this->posts_id)

@@ -16,5 +16,5 @@ app/config/config.php
 app/config/backup.app
 app/config/backup.auth
 sftp-config.json
-
+build/
 tests/_output/*

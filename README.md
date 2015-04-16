@@ -5,9 +5,7 @@ PhalconTip
 
 This is the official Phalcon Tip it clone from Phalcon Forum, you can adapt it to your own needs or improve it if you want.
 
-Please write us if you have any feedback.
-
-Thanks.
+Please write us if you have any feedback. Thanks.!!!
 
 Requirements
 ------------
@@ -63,7 +61,7 @@ php scripts/send-notifications-consumer.php &
 
 Initial Test Data
 -----------------
-You can create fake entries on an empty Phosphorum installation by running:
+You can create fake entries on an empty Phalcontip installation by running:
 
 ```bash
 php scripts/random-entries.php
@@ -71,7 +69,7 @@ php scripts/random-entries.php
 
 Tests
 -----
-Phosphorum use [Codeception](http://codeception.com) functional tests. Execute:
+Phalcontip use [Codeception](http://codeception.com) functional tests. Execute:
 
 ```bash
 php codecept.phar run
@@ -85,4 +83,4 @@ php codecept.phar run --debug
 
 License
 -------
-Phosphorum is open-sourced software licensed under the New BSD License.
+Phalcontip is open-sourced software licensed under the New BSD License.
