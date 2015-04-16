@@ -1,5 +1,5 @@
 <?php
-$I = new TestGuy\UserSteps($scenario);
+/*$I = new TestGuy\UserSteps($scenario);
 $I->wantTo('start a discussion');
 $I->amAdmin();
 $I->haveCategory(['name' => 'Testing', 'slug' => 'test', 'description' => 'codeception functional test']);
@@ -15,3 +15,4 @@ $I->selectOption('#categoryId', 'Testing');
 $I->click('Submit Discussion');
 $I->see('How can I write tests in Codeception','h1');
 $I->seeInCurrentUrl('/how-can-i-write-tests-in-codeception');
+*/
