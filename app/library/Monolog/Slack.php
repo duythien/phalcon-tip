@@ -37,7 +37,7 @@ class Slack extends Component
      * 
      * @return Monolog\Logger
      */
-    public  function run($message)
+    public function run($message)
     {
 
         $room     = $this->config->slack->room;
@@ -52,4 +52,3 @@ class Slack extends Component
         $log->error($message);
     }
 }
-
