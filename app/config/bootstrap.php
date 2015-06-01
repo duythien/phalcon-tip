@@ -33,7 +33,7 @@ if (! defined('APP_PATH')) {
 /**
  * Read the configuration
  */
-$config = include APP_PATH . "/app/config/config.php";
+$config = include APP_PATH . "/app/config/config.example.php";
 
 /**
  * Include the loader
