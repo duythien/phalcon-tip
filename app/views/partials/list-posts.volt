@@ -37,7 +37,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="row js-trick-container" style="position: relative; height: 761.5px;">
+	<div class="row js-trick-container">
 	{%- for post in posts -%}
 		<div class="trick-card col-lg-4 col-md-6 col-sm-6 col-xs-12">
 			<div data-slug="test-product" class="trick-card-inner js-goto-trick">
