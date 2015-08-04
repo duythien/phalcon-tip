@@ -13,7 +13,7 @@ cache:
     - $HOME/.composer/cache
 
 before_script:
-  - cp ./tests/config/config.php.dist ./app/config/config.php
+  - cp ./tests/config/config.dist.php ./app/config/config.php
   - mysql -e 'CREATE DATABASE phalcontip CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;'
   - cat schemas/phalcontip.sql | mysql phalcontip
   - (cd ./scripts/ && php random-entries.php > /dev/null)
