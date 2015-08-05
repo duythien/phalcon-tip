@@ -16,3 +16,5 @@ modules:
             user: ''
             password: ''
             dump: tests/_data/dump.sql
+
+error_level: "E_ALL | E_STRICT"

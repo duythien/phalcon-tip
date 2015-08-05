@@ -78,7 +78,11 @@ php codecept.phar run
 Detailed output:
 
 ```bash
-php codecept.phar run --debug
+$ vendor/bin/codecept build
+
+$ vendor/bin/codecept run
+# OR
+$ vendor/bin/codecept run --debug # Detailed output
 ```
 
 License
