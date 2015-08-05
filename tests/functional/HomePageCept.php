@@ -5,7 +5,7 @@
 
 $I = new Step\Functional\UserSteps($scenario);
 
-$I->wantTo('Verify that the home page wellcome me');
+$I->wantTo('Verify that the home page welcome me');
 $I->amOnPage('/');
 $I->see('Log In with Github');
 $I->amRegularUser();

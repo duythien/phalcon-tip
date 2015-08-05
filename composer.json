@@ -1,5 +1,30 @@
 {
+    "name":        "zphalcon/phalcon-tip",
+    "description": "Source code of The official Phalcon Tip site",
+    "keywords":    ["forum", "phalcon", "tip"],
+    "type":        "project",
+    "license":     "BSD-3-Clause",
+    "homepage":    "http://phalcontip.com/",
+    "authors": [
+        {
+            "name": "Phalcon Team",
+            "email": "team@phalconphp.com"
+        },
+        {
+            "name": "Thien",
+            "email": "fcduythien@gmail.com"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/zphalcon/phalcon-tip",
+        "issues": "https://github.com/zphalcon/phalcon-tip/issues",
+        "wiki":   "https://github.com/zphalcon/phalcon-tip/wiki"
+    },
     "require": {
+        "php": ">= 5.4",
+        "ext-mbstring": "*",
+        "ext-iconv": "*",
+        "ext-phalcon": "~2.0",
         "aws/aws-sdk-php": "~2.5",
         "guzzle/guzzle": ">=4.0|<7.0",
         "swiftmailer/swiftmailer": "~5.4",
