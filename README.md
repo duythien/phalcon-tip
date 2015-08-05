@@ -59,6 +59,7 @@ Then you'll need to create the database and initialize schema:
 ```sh
 $ echo 'CREATE DATABASE phalcontip CHARSET=utf8 COLLATE=utf8_unicode_ci' | mysql -u root
 $ cat schemas/phalcontip.sql | mysql -u root phalcontip
+```
 
 #### Initial Test Data
 
