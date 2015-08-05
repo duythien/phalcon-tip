@@ -2,17 +2,13 @@
 
 # suite for functional (integration) tests.
 # emulate web requests and make application process them.
-# Include one of framework modules (Symfony2, Yii2, Laravel4, Phalcon1) to use it.
+# (tip: better to use with frameworks).
 
-class_name: TestGuy
+# RUN `build` COMMAND AFTER ADDING/REMOVING MODULES.
+
+class_name: FunctionalTester
 modules:
-    enabled: [Filesystem, Phalcon1, TestHelper, PhpBrowser]
-    config:
-        Phalcon1:
-            bootstrap: tests/config/bootstrap.php
-            cleanup: true
-            savepoints: true
-        PhpBrowser:
-            url: 'http://phalcontip.com'
-            curl:
-              CURLOPT_RETURNTRANSFER: true
+    enabled:
+        - \Helper\Functional
+        - Filesystem
+        - Phalcon1

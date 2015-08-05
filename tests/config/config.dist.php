@@ -4,7 +4,7 @@
  +------------------------------------------------------------------------+
  | Phalcon Tip                                                            |
  +------------------------------------------------------------------------+
- | Copyright (c) 2013-2014 Phalcon Team and contributors                  |
+ | Copyright (c) 2013-2015 Phalcon Team and contributors                  |
  +------------------------------------------------------------------------+
  | This source file is subject to the New BSD License that is bundled     |
  | with this package in the file docs/LICENSE.txt.                        |
@@ -19,10 +19,10 @@ return new \Phalcon\Config(array(
 
     'site' => array(
         'name'      => 'Phalcon Framework',
-        'url'       => 'http://forum.phalconphp.com',
+        'url'       => 'http://phalcontip.loc',
         'project'   => 'Phalcon',
         'software'  => 'Phosphorum',
-        'repo'      => 'https://github.com/phalcon/cphalcon/issues',
+        'repo'      => 'https://github.com/zphalcon/phalcon-tip/issues',
         'docs'      => 'https://github.com/phalcon/docs',
     ),
 
@@ -46,7 +46,7 @@ return new \Phalcon\Config(array(
             'baseUri'       => '/'
         ),
         'production'     => array(
-            'staticBaseUri' => 'http://static.phosphorum.com/',
+            'staticBaseUri' => 'http://static.phalcontip.com/',
             'baseUri'       => '/'
         ),
         'debug'          => true
@@ -59,7 +59,7 @@ return new \Phalcon\Config(array(
     'github'      => array(
         'clientId'     => '',
         'clientSecret' => '',
-        'redirectUri'  => 'http://pforum.loc/login/oauth/access_token/'
+        'redirectUri'  => 'http://phalcontip.loc/login/oauth/access_token/'
     ),
 
     'amazonSns'   => array(
@@ -85,7 +85,7 @@ return new \Phalcon\Config(array(
 
     'mail'     => array(
         'fromName'     => 'Phalcon',
-        'fromEmail'    => 'phosphorum@phalconphp.com',
+        'fromEmail'    => 'phalcontip@phalconphp.com',
     ),
     'slack' => array(
         'token' => 'you token',
