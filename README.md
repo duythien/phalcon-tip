@@ -62,7 +62,7 @@ $ cat schemas/phalcontip.sql | mysql -u root phalcontip
 
 #### Initial Test Data
 
-You can create fake entries on an empty Phosphorum installation by running:
+You can create fake entries on an empty PhalconTip installation by running:
 
 > Note: The script random-entries.php must be executed inside the scripts directory
 
