@@ -135,6 +135,7 @@ h2.title-between {
     color: #33383A;
     font-size: 20px;
     padding: 20px;
+    max-height: 20px;
 }
 
 .trick-card-title a{
