@@ -49,7 +49,7 @@ class Expert extends BadgeBase
                 ->where('r.users_id = ?0 AND r.accepted = "Y"')
                 ->notInWhere('p.categories_id', $this->getNoBountyCategories())
                 ->groupBy('p.categories_id')
-                ->having('COUNT(*) >= 10')
+                ->having("COUNT(*) >= 10")
                 ->getQuery();
         }
         return $this->query;
